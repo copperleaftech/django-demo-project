@@ -1,5 +1,5 @@
 Django==1.10.2
-django-debug-toolbar==1.4
+django-debug-toolbar==1.6
 factory-boy==2.7.0
 fake-factory==0.7.2
 ipaddress==1.0.17
