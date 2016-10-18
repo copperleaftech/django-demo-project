@@ -1,5 +1,7 @@
 import factory
 
+from django.utils.text import slugify
+
 from .models import Category, Book, Author
 
 from faker import Faker
@@ -11,6 +13,7 @@ class AuthorFactory(factory.DjangoModelFactory):
         model = Author
 
     name = factory.Faker('name')
+    email = factory.LazyAttribute(lambda a: '{0}@example.com'.format(slugify(a.name)).lower())
 
 
 class CategoryFactory(factory.DjangoModelFactory):
