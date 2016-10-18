@@ -30,9 +30,10 @@ class BookFactory(factory.DjangoModelFactory):
     author = factory.SubFactory(AuthorFactory)
 
     @factory.post_generation
-    def categories(self, create, count=5, **kwargs):
+    def categories(self, create, count=None, **kwargs):
         make_category = getattr(CategoryFactory, 'create' if create else 'build')
 
-        categories = [make_category() for i in range(count)]
-        for category in categories:
-            self.categories.add(category)
+        if count:
+            categories = [make_category() for i in range(count)]
+            for category in categories:
+                self.categories.add(category)
