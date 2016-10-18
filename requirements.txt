@@ -1,6 +1,10 @@
 Django==1.10.2
+django-debug-toolbar==1.4
 factory-boy==2.7.0
 fake-factory==0.7.2
 ipaddress==1.0.17
+ipdb==0.9.3
+ipython==4.1.2
+ipython-genutils==0.1.0
 python-dateutil==2.5.3
 six==1.10.0
