@@ -2,20 +2,22 @@ from django.contrib import admin
 
 from reversion.admin import VersionAdmin
 
+from import_export.admin import ImportExportMixin
+
 from .models import Category, Book, Author
 
 
-class CategoryAdmin(VersionAdmin, admin.ModelAdmin):
+class CategoryAdmin(ImportExportMixin, VersionAdmin, admin.ModelAdmin):
     pass
 admin.site.register(Category, CategoryAdmin)
 
 
-class BookAdmin(VersionAdmin, admin.ModelAdmin):
+class BookAdmin(ImportExportMixin, VersionAdmin, admin.ModelAdmin):
     pass
 admin.site.register(Book, BookAdmin)
 
 
-class AuthorAdmin(VersionAdmin, admin.ModelAdmin):
+class AuthorAdmin(ImportExportMixin, VersionAdmin, admin.ModelAdmin):
     fields = ('name', 'email')
     list_display = ('name', 'email')
     list_editable = ('email',)
