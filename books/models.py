@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.urls import reverse
 
 
 class Author(models.Model):
@@ -29,3 +30,6 @@ class Book(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('book-detail', kwargs=dict(pk=self.pk))
