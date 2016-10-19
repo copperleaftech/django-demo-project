@@ -17,13 +17,15 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from books.views import BookDetail, BookList, AuthorBookList
+from books.views import BookDetail, BookList, AuthorBookList, BookCreate, BookUpdate
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^author/([0-9]+)/books/$', AuthorBookList.as_view(), name='author-book-list'),
     url(r'^books/$', BookList.as_view(), name='book-list'),
+    url(r'^books/create/$', BookCreate.as_view(), name='book-create'),
     url(r'^books/(?P<pk>[\w]+)/$', BookDetail.as_view(), name='book-detail'),
+    url(r'^books/(?P<pk>[\w]+)/update$', BookUpdate.as_view(), name='book-update'),
 ]
 
 if settings.DEBUG:

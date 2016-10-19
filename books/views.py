@@ -22,3 +22,13 @@ class AuthorBookList(BookList):
     def get_queryset(self):
         self.author = get_object_or_404(Author, id=self.args[0])
         return Book.objects.filter(author=self.author)
+
+
+class BookCreate(CreateView):
+    model = Book
+    template_name = 'create.html'
+
+
+class BookUpdate(UpdateView):
+    model = Book
+    template_name = 'update.html'
