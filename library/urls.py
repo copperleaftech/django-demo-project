@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^books/$', BookList.as_view(), name='book-list'),
     url(r'^books/create/$', BookCreate.as_view(), name='book-create'),
     url(r'^books/(?P<pk>[\w]+)/$', BookDetail.as_view(), name='book-detail'),
-    url(r'^books/(?P<pk>[\w]+)/update$', BookUpdate.as_view(), name='book-update'),
+    url(r'^books/(?P<pk>[\w]+)/update/$', BookUpdate.as_view(), name='book-update'),
 ]
 
 if settings.DEBUG:
