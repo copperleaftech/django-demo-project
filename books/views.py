@@ -26,9 +26,11 @@ class AuthorBookList(BookList):
 
 class BookCreate(CreateView):
     model = Book
-    template_name = 'create.html'
+    fields = '__all__'
+    template_name = 'books/create.html'
 
 
 class BookUpdate(UpdateView):
     model = Book
-    template_name = 'update.html'
+    fields = '__all__'
+    template_name = 'books/update.html'
