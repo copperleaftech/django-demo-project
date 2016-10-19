@@ -1,6 +1,8 @@
+crispy-forms-foundation==0.5.4
 decorator==4.0.10
 diff-match-patch==20121119
 Django==1.10.2
+django-crispy-forms==1.6.1
 django-debug-toolbar==1.6
 django-import-export==0.5.1
 django-reversion==2.0.6

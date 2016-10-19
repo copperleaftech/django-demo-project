@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import get_object_or_404
 
 from .models import Category, Book, Author
+from .forms import BookForm
 
 
 class BookList(ListView):
@@ -25,12 +26,11 @@ class AuthorBookList(BookList):
 
 
 class BookCreate(CreateView):
-    model = Book
-    fields = '__all__'
+    form_class = BookForm
     template_name = 'books/create.html'
 
 
 class BookUpdate(UpdateView):
-    model = Book
-    fields = '__all__'
+    queryset = Book.objects.all()
+    form_class = BookForm
     template_name = 'books/update.html'

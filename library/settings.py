@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'reversion',
     'import_export',
+    'crispy_forms',
+    'crispy_forms_foundation',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3', 'foundation-5')
+CRISPY_TEMPLATE_PACK = 'foundation-5'
